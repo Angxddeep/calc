@@ -163,6 +163,7 @@ window.addEventListener('keydown', (e) => {
     updateDisplay();
   }
   if (e.key === '/') {
+    e.preventDefault();   // prevents browser search shortcut. 
     chooseOperation('÷'); 
     updateDisplay();
   }
@@ -171,7 +172,7 @@ window.addEventListener('keydown', (e) => {
     updateDisplay();
   }
 
-  
+
   if (e.key === 'Enter' || e.key === '=') {
     e.preventDefault();
     compute();
