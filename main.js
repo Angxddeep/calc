@@ -140,3 +140,51 @@ deleteButton.addEventListener('click', () => {
   deleteNumber();
   updateDisplay();
 });
+
+// KEYBOARD SUPPORT
+window.addEventListener('keydown', (e) => {
+  // Numbers (0-9) and Decimal point (.)
+  if ((e.key >= '0' && e.key <= '9') || e.key === '.') {
+    appendNumber(e.key);
+    updateDisplay();
+  }
+
+  // Operators (+, -, *, /, %)
+  if (e.key === '+') {
+    chooseOperation('+');
+    updateDisplay();
+  }
+  if (e.key === '-') {
+    chooseOperation('-');
+    updateDisplay();
+  }
+  if (e.key === '*') {
+    chooseOperation('×');
+    updateDisplay();
+  }
+  if (e.key === '/') {
+    chooseOperation('÷'); 
+    updateDisplay();
+  }
+  if (e.key === '%') {
+    chooseOperation('%');
+    updateDisplay();
+  }
+
+  
+  if (e.key === 'Enter' || e.key === '=') {
+    e.preventDefault();
+    compute();
+    updateDisplay();
+  }
+
+  if (e.key === 'Backspace') {
+    deleteNumber();
+    updateDisplay();
+  }
+
+  if (e.key === 'Escape') {
+    clear();
+    updateDisplay();
+  }
+});
