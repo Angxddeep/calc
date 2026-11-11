@@ -28,7 +28,10 @@ function deleteNumber() {
 // Add a digit or dot to the current number
 function appendNumber(number) {
   // Prevent adding multiple decimal points
-  if (number === '.' && currentOpvalue.includes('.')) return;
+  if (number === '.' && currentOpvalue.includes('.')){
+  alert("A number cannot have more than 1 decimal point!");
+  return;
+  }
   
   // Converting to string and append
   currentOpvalue = currentOpvalue.toString() + number.toString();
