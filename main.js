@@ -1,4 +1,3 @@
-
 const previousDisplay = document.querySelector('.previous-opvalue');
 const currentDisplay = document.querySelector('.current-opvalue');
 const numberButtons = document.querySelectorAll('.number');
@@ -164,7 +163,6 @@ window.addEventListener('keydown', (e) => {
     chooseOperation('%');
     updateDisplay();
   }
-
 
   if (e.key === 'Enter' || e.key === '=') {
     e.preventDefault();
