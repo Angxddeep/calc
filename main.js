@@ -104,3 +104,39 @@ function updateDisplay() {
     previousDisplay.innerText = '';
   }
 }
+
+// CLICK DETECTORS
+
+// When any number button (0-9, .) is clicked
+numberButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    appendNumber(button.innerText);
+    updateDisplay();
+  });
+});
+
+// When any operator button (+, -, ×, ÷) is clicked
+operatorButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    chooseOperation(button.innerText);
+    updateDisplay();
+  });
+});
+
+// When "=" is clicked
+equalsButton.addEventListener('click', () => {
+  compute();
+  updateDisplay();
+});
+
+// When "AC" is clicked
+clearButton.addEventListener('click', () => {
+  clear();
+  updateDisplay();
+});
+
+// When "DEL" is clicked
+deleteButton.addEventListener('click', () => {
+  deleteNumber();
+  updateDisplay();
+});
