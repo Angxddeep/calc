@@ -57,6 +57,12 @@ function compute() {
 
   if (isNaN(prev) || isNaN(current)) return;
 
+  if ((operation === '÷' || operation === '%') && current === 0) {
+    alert("Cannot divide by zero!");
+    clear();
+    updateDisplay();
+    return;
+  }
   switch (operation) {
     case '+':
       computation = prev + current;
@@ -68,27 +74,14 @@ function compute() {
       computation = prev * current;
       break;
     case '÷':
-      if (current === 0) {
-        alert("Cannot divide by zero!");
-        clear();
-        updateDisplay();
-        return;
-      }
       computation = prev / current;
       break;
     case '%':
-      if (current === 0) {
-        alert("Cannot divide by zero!");
-        clear();
-        updateDisplay();
-        return;
-      }
       computation = prev % current;
       break;
     default:
       return;
   }
-
   currentOpvalue = computation.toString();
   operation = undefined;
   previousOpvalue = '';
